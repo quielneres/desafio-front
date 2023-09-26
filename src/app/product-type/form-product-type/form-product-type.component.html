@@ -1,0 +1,18 @@
+
+<p-messages></p-messages>
+
+<div class="flex flex-column gap-2">
+  <label htmlFor="username">Descrição</label>
+  <input pInputText id="description" aria-describedby="description-help" [(ngModel)]="description" />
+</div>
+
+
+<div class="flex flex-column gap-2">
+  <label htmlFor="username">Taxa</label>
+  <p-inputNumber [(ngModel)]="tax_percentage" inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="2"> </p-inputNumber>
+</div>
+
+
+<div class="card flex justify-content-center">
+  <button pButton pRipple label="Enviar" (click)="submit()" class="p-button-success"></button>
+</div>

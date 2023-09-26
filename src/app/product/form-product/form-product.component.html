@@ -1,0 +1,24 @@
+
+<p-messages></p-messages>
+
+<div class="flex flex-column gap-2">
+  <label htmlFor="username">Tipo de produto</label>
+
+  <p-dropdown [options]="productTypeList" [(ngModel)]="selectedProductType" optionLabel="name"></p-dropdown>
+</div>
+
+
+<div class="flex flex-column gap-2">
+  <label htmlFor="username">Descrição</label>
+  <input pInputText id="description" aria-describedby="description-help" [(ngModel)]="description" />
+</div>
+
+
+<div class="flex flex-column gap-2">
+  <label htmlFor="username">Preço</label>
+  <p-inputNumber [(ngModel)]="price" inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="5"> </p-inputNumber>
+</div>
+
+<div class="card flex justify-content-center">
+  <button pButton pRipple label="Enviar" (click)="send()" class="p-button-success"></button>
+</div>

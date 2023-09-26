@@ -1,0 +1,26 @@
+<p-messages></p-messages>
+
+<p-card class="container">
+  <div class="p-card-title">
+    Login
+  </div>
+  <form [formGroup]="formLogin" novalidate>
+    <div class="conteudo-login">
+      <div class="p-grid">
+        <div class="p-col-12">
+          <label for="email">Email</label>
+          <input id="email" type="email" pInputText formControlName="email"
+                 placeholder="Ex. perukas@example.com">
+        </div>
+        <div class="p-col-12">
+          <label for="password">Senha</label>
+          <input id="password" type="password" pInputText formControlName="password">
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="p-card-footer">
+    <button pButton type="button" label="Entrar" class="full" (click)="login()"></button>
+    <a href="/user/new">Fazer cadastro</a>
+  </div>
+</p-card>

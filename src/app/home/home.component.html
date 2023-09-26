@@ -1,0 +1,34 @@
+
+<p-messages></p-messages>
+<p class="m-0" *ngIf="isData">
+  Carrinho: {{ itemsQtd }} <br>
+  <p-button *ngIf="itemsQtd > 0" label="Ir para o carrinho" (click)="sendPurchase()"></p-button>
+</p>
+<p-card header="Lista de produtos">
+  <p class="m-0" *ngIf="!isData">
+    Não há produtos cadastrados. <br>
+    <a href="/product">Cadastrar produtos</a>
+
+  </p>
+
+  <div class="card" *ngIf="isData">
+    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+      <ng-template let-product pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+          <div class="mb-3">
+            <img src="https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png" [alt]="product.description" class="w-6 shadow-2" width="200" height="200"/>
+          </div>
+          <div>
+            <h4 class="mb-1">{{ product.description }}</h4>
+            <h6 class="mt-0 mb-3">Valor: {{ product.price | currency : 'BRL'}}</h6>
+            <div class="car-buttons mt-5">
+              <div class="card flex justify-content-center">
+              <p-button label="Adicionar Carrinho" (click)="addCart(product)"></p-button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</p-card>

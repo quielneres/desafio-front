@@ -1,0 +1,23 @@
+<p-card header="Lista Vendas">
+  <p-messages></p-messages>
+  <div class="card">
+    <p-table [value]="purchasing" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Code</th>
+          <th>Code User</th>
+          <th>Valor Imposto</th>
+          <th>Valor</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-purchasing>
+        <tr>
+          <td>{{ purchasing.id }}</td>
+          <td>{{ purchasing.id_user }}</td>
+          <td>{{ purchasing.taxValue | currency : 'BRL'}}</td>
+          <td>{{ purchasing.totalAmount | currency : 'BRL'}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</p-card>

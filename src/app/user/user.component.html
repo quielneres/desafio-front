@@ -1,0 +1,22 @@
+<p-card header="Cadastro">
+  <p-messages></p-messages>
+
+  <div class="flex flex-column gap-2">
+    <label htmlFor="name">Nome</label>
+    <input pInputText id="name" aria-describedby="description-help" [(ngModel)]="name"/>
+  </div>
+
+  <div class="flex flex-column gap-2">
+    <label htmlFor="email">E-mail</label>
+    <input pInputText id="email" aria-describedby="description-help" [(ngModel)]="email"/>
+  </div>
+
+  <div class="flex flex-column gap-2">
+    <label htmlFor="username">Senha</label>
+    <p-password [(ngModel)]="password" [feedback]="false"></p-password>
+  </div>
+
+  <div class="card flex justify-content-center">
+    <button pButton pRipple label="Enviar" (click)="submit()" class="p-button-success"></button>
+  </div>
+</p-card>
